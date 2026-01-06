@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "legoparts",
+          "database_id": "2d0f8a3c-d7b9-4c4e-ac84-6e4c3dcf4bd6"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "03a4f1ff3a534136aecf2b93de49d04e",
+            "binding": "SECRET",
+            "secret_name": "Special"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
